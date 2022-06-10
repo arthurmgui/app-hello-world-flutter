@@ -12,7 +12,17 @@ void main() {
         color: Colors.white,
         child: Row(
           children: [
-            Text("Hello, World!"),
+            Text(
+              "Hello, World!",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.amber,
+                letterSpacing: 3,
+                fontWeight: FontWeight.bold,
+                wordSpacing: 15,
+                decoration: TextDecoration.underline,
+              ),
+            ),
           ],
         ),
       ),
