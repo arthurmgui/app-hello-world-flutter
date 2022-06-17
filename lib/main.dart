@@ -2,29 +2,33 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: "Hello, World!",
     home: Scaffold(
       appBar: AppBar(
         title: Text("Hello World"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Color.fromARGB(255, 12, 71, 119),
       ),
       body: Container(
-        margin: EdgeInsets.only(bottom: 80),
-        padding: EdgeInsets.only(top: 80),
-        color: Color.fromARGB(255, 23, 110, 180),
+        margin: EdgeInsets.only(bottom: 0),
+        padding: EdgeInsets.only(top: 200),
+        color: Colors.black,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "Hello, World!",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.amber,
-                letterSpacing: 3,
-                fontWeight: FontWeight.bold,
-                wordSpacing: 15,
-                decoration: TextDecoration.underline,
+            TextButton(
+              onPressed: () {
+                print("Welcome to the Flutter");
+              },
+              child: Text(
+                "Hello, World!",
+                style: TextStyle(color: Colors.white),
+              ),
+              style: TextButton.styleFrom(
+                side: BorderSide(color: Colors.white, width: 2),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
               ),
             ),
             Image(
