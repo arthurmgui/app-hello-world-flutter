@@ -6,11 +6,11 @@ void main() {
     home: Scaffold(
       appBar: AppBar(
         title: Text("Hello World"),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.blue,
       ),
       body: Container(
-        color: Colors.white,
-        child: Row(
+        color: Color.fromARGB(255, 23, 110, 180),
+        child: Column(
           children: [
             Text(
               "Hello, World!",
@@ -23,6 +23,10 @@ void main() {
                 decoration: TextDecoration.underline,
               ),
             ),
+            Image(
+              image: AssetImage("images/earth_flutter.jpg"),
+              fit: BoxFit.cover,
+            )
           ],
         ),
       ),
