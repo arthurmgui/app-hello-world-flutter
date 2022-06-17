@@ -13,6 +13,8 @@ void main() {
         padding: EdgeInsets.only(top: 80),
         color: Color.fromARGB(255, 23, 110, 180),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Hello, World!",
