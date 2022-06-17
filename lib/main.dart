@@ -9,6 +9,8 @@ void main() {
         backgroundColor: Colors.blue,
       ),
       body: Container(
+        margin: EdgeInsets.only(bottom: 80),
+        padding: EdgeInsets.only(top: 80),
         color: Color.fromARGB(255, 23, 110, 180),
         child: Column(
           children: [
@@ -26,7 +28,7 @@ void main() {
             Image(
               image: AssetImage("images/earth_flutter.jpg"),
               fit: BoxFit.cover,
-            )
+            ),
           ],
         ),
       ),
