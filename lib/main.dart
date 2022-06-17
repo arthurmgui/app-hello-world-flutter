@@ -6,11 +6,11 @@ void main() {
     home: Scaffold(
       appBar: AppBar(
         title: Text("Hello World"),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.green,
       ),
       body: Container(
-        color: Color.fromARGB(255, 21, 89, 145),
-        child: Column(
+        color: Colors.white,
+        child: Row(
           children: [
             Text(
               "Hello, World!",
