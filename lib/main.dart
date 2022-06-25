@@ -4,9 +4,27 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: "Hello, World!",
-    home: Scaffold(
+    home: Home(),
+  ));
+}
+
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var nameButton = "Hello, World!";
+  var welcomeHelloWorld = "...";
+  var earthImage = "images/earth_flutter.jpg";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Hello World"),
+        title: Text("App Hello World!"),
         backgroundColor: Color.fromARGB(255, 12, 71, 119),
       ),
       body: Container(
@@ -19,10 +37,20 @@ void main() {
           children: [
             TextButton(
               onPressed: () {
-                print("Welcome to the Flutter");
+                if (nameButton == "Hello, World!") {
+                  setState(() {
+                    nameButton = "Sair do Flutter";
+                    welcomeHelloWorld = "Welcome to the Flutter!";
+                  });
+                } else {
+                  setState(() {
+                    nameButton = "Hello, World!";
+                    welcomeHelloWorld = "...";
+                  });
+                }
               },
               child: Text(
-                "Hello, World!",
+                nameButton,
                 style: TextStyle(color: Colors.white),
               ),
               style: TextButton.styleFrom(
@@ -31,13 +59,17 @@ void main() {
                     borderRadius: BorderRadius.circular(10)),
               ),
             ),
+            Text(
+              welcomeHelloWorld,
+              style: TextStyle(color: Colors.white),
+            ),
             Image(
-              image: AssetImage("images/earth_flutter.jpg"),
+              image: AssetImage(earthImage),
               fit: BoxFit.cover,
             ),
           ],
         ),
       ),
-    ),
-  ));
+    );
+  }
 }
