@@ -20,6 +20,20 @@ class _HomeState extends State<Home> {
   var welcomeHelloWorld = "...";
   var earthImage = "images/earth_flutter.jpg";
 
+  void _pressButton() {
+    if (nameButton == "Hello, World!") {
+      setState(() {
+        nameButton = "Voltar";
+        welcomeHelloWorld = "Welcome to the Flutter!";
+      });
+    } else {
+      setState(() {
+        nameButton = "Hello, World!";
+        welcomeHelloWorld = "...";
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,17 +51,7 @@ class _HomeState extends State<Home> {
           children: [
             TextButton(
               onPressed: () {
-                if (nameButton == "Hello, World!") {
-                  setState(() {
-                    nameButton = "Sair do Flutter";
-                    welcomeHelloWorld = "Welcome to the Flutter!";
-                  });
-                } else {
-                  setState(() {
-                    nameButton = "Hello, World!";
-                    welcomeHelloWorld = "...";
-                  });
-                }
+                _pressButton();
               },
               child: Text(
                 nameButton,
